@@ -1,0 +1,27 @@
+<div class="content-center">
+    {{#if posts}}
+        <div class="js-posts-list posts clearfix">
+            {{#each posts}}
+                <div class="posts__preview clearfix" data-owner-id="{{ownerId}}">
+                    <h1>
+                        <a class="js-router-link"
+                           href="/{{locale}}/posts/{{_id}}/review">{{title}}</a>
+                    </h1>
+
+                    <p>{{{description}}}</p>
+
+                    <div class="posts__preview__footer">
+                        <a class="btn btn-primary"
+                           href="/{{locale}}/posts/{{_id}}/review">{{i18n 'Review'}}</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="alert alert-warning">
+            <h3>
+                {{i18n 'No posts to review'}}
+            </h3>
+        </div>
+    {{/if}}
+</div>

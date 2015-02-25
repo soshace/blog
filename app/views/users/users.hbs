@@ -1,0 +1,91 @@
+<div class="content-center user-profile-page">
+    <div class="user js-user"
+         data-user-name="{{user.userName}}"
+         data-_id="{{user._id}}"
+         data-locale="{{user.locale}}
+         ">
+        {{#if isOwner}}
+            {{> usersTabs}}
+        {{/if}}
+        <div class="user__profile">
+            <div class="user__profile__info clearfix">
+                <div class="user__profile__info__avatar">
+                    <div class="user__profile__info__avatar__img clearfix">
+                        {{#if user.profileImg}}
+                            <img src="{{user.profileImg}}"/>
+                        {{else}}
+                            <span class="glyphicon glyphicon-user"></span>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="user__profile__info__description">
+                    {{#if isProfileInfoEmpty}}
+                        <h4 class="user__profile__info__description__empty">
+                            {{#if isOwner}}
+                                <a href="/{{locale}}/users/{{user.userName}}/edit" class="js-router-link">{{i18n 'Tell about yourself'}}</a>
+                            {{else}}
+                                <span>{{i18n "Author hasn't gave information about themselves yet."}}</span>
+                            {{/if}}
+                        </h4>
+                    {{else}}
+                        {{#if user.fullName}}
+                            <div class="user__profile__block">
+                                <h2>
+                                    {{user.fullName}}
+                                </h2>
+                            </div>
+                        {{/if}}
+                        {{#if user.sex}}
+                            <div class="user__profile__block">
+                                <span class="user__profile__block__title">{{i18n 'Sex'}}:</span> {{i18n user.sex}}
+                            </div>
+                        {{/if}}
+                        {{#if user.birthday}}
+                            <div class="user__profile__block">
+                            <span class="user__profile__block__title">{{i18n 'Birthday'}}
+                                :</span> {{formatDate user.birthday}}
+
+                            </div>
+                        {{/if}}
+                        {{#if user.aboutAuthor}}
+                            <div class="user__profile__block">
+                                <div><span class="user__profile__block__title">{{i18n 'About author'}}:</span></div>
+                                <div>{{user.aboutAuthor}}</div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+            {{#if isOwner}}
+                <div class="user__profile__footer hidden-xs">
+                    <a href="/{{locale}}/posts/new"
+                       class="user__profile__footer__add-post btn btn-success js-router-link">{{i18n 'Add post'}}</a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    {{#if posts}}
+        <div class="js-posts-list posts clearfix">
+            {{#if backend}}
+                {{#each posts}}
+                    {{> postPreview}}
+                {{/each}}
+            {{/if}}
+        </div>
+    {{else}}
+        <div class="alert alert-info">
+            {{#if isOwner}}
+                <h4>
+                    <a class="js-router-link hidden-xs" href="/{{locale}}/posts/new">
+                        {{i18n 'Here could be your posts'}}
+                    </a>
+                    <span class="hide visible-xs">{{i18n 'You have no articles'}}</span>
+                </h4>
+            {{else}}
+                <h4>
+                    {{i18n 'The author has not published any articles yet'}}
+                </h4>
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

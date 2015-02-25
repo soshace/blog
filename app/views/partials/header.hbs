@@ -1,0 +1,76 @@
+<div class="header-content clearfix">
+    {{#if isHomeTab}}
+        <span class="header__logo hidden-xs">
+            <img src="{{paths.static}}images/logo.png" alt="Soshace" class="img-responsive"/>
+        </span>
+        <span class="visible-xs header__logo header__logo-small">
+            <img src="{{paths.static}}images/logo_small.png" alt="Soshace" class="img-responsive"/>
+        </span>
+    {{else}}
+        <a href="/{{locale}}" class="js-router-link header__logo hidden-xs">
+            <img src="{{paths.static}}images/logo.png" alt="Soshace" class="img-responsive"/>
+        </a>
+        <a href="/{{locale}}" class="js-router-link header__logo header__logo-small visible-xs">
+            <img src="{{paths.static}}images/logo_small.png" alt="Soshace" class="img-responsive"/>
+        </a>
+    {{/if}}
+    <div class="header__tabs">
+        {{#if isAuthenticated}}
+            {{#if isUserTab}}
+                <span class="header__tab header__tab-active">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="hidden-xs">
+                        {{i18n 'Profile'}}
+                    </span>
+                </span>
+            {{else}}
+                <a href="/{{locale}}/users/{{profileUserName}}"
+                   class="js-router-link header__tab header__tab-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="hidden-xs">
+                        {{i18n 'Profile'}}
+                    </span>
+                </a>
+            {{/if}}
+        {{/if}}
+        {{#if isPostEditTab}}
+            <span class="header__tab header__tab-active hidden-xs">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span>
+                    {{i18n 'Add Post'}}
+                </span>
+            </span>
+        {{else}}
+            <a href="/{{locale}}/posts/new" class="js-router-link header__tab header__tab-link hidden-xs">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <span>
+                    {{i18n 'Add Post'}}
+                </span>
+            </a>
+        {{/if}}
+        {{#if isAuthenticated}}
+            <a href="#" class="header__tab header__tab-link js-logout">
+                <span class="glyphicon glyphicon-log-out"></span>
+                <span class="hidden-xs">
+                    {{i18n 'Sign Out'}}
+                </span>
+            </a>
+        {{else}}
+            {{#if isAuthTab}}
+                <span class="header__tab header__tab-active">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <span class="hidden-xs">
+                        {{i18n 'Sign In'}}
+                    </span>
+                </span>
+            {{else}}
+                <a href="/{{locale}}/login" class="js-router-link header__tab header__tab-link">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <span class="hidden-xs">
+                        {{i18n 'Sign In'}}
+                    </span>
+                </a>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>

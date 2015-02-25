@@ -1,0 +1,102 @@
+<div class="content-center">
+    <div class="status-messages js-status-messages">
+        {{#unless isAuthenticated}}
+            {{> messages/enableEditor}}
+        {{/unless}}
+    </div>
+    <div class="post-edit js-post-edit"
+        {{#if post.ownerId}} data-owner-id="{{post.ownerId}}"{{/if}}
+        {{#if post.status}} data-status="{{post.status}}"{{/if}}
+        {{#if post._id}} data-_id="{{post._id}}"{{/if}}>
+        <div class="post-edit__toolbar js-editor-toolbar">
+            <div class="content-center">
+                {{#if readOnly}}
+                    <div class="post-edit__toolbar__disable js-read-only-reason"></div>
+                {{else}}
+                    <div class="post-edit__toolbar__content clearfix">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <a class="btn js-command js-simple-command" data-edit="bold"
+                                   title="{{i18n 'Bold'}} (Ctrl/Cmd+B)">
+                                    <i class="fa fa-bold"></i>
+                                </a>
+                                <a class="btn js-command js-simple-command" data-edit="italic"
+                                   title="{{i18n 'Italic'}} (Ctrl/Cmd+I)">
+                                    <i class="fa fa-italic"></i>
+                                </a>
+                                <a class="btn js-command js-simple-command" data-edit="strikethrough"
+                                   title="{{i18n 'Strikethrough'}}">
+                                    <i class="fa fa-strikethrough"></i>
+                                </a>
+                                <a class="btn js-command js-simple-command" data-edit="underline"
+                                   title="{{i18n 'Underline'}} (Ctrl/Cmd+U)">
+                                    <i class="fa fa-underline"></i>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn js-command js-simple-command" data-edit="insertunorderedlist"
+                                   title="{{i18n 'Bullet list'}}">
+                                    <i class="fa fa-list-ul"></i>
+                                </a>
+                                <a class="btn js-command js-simple-command" data-edit="insertorderedlist"
+                                   title="{{i18n 'Number list'}}">
+                                    <i class="fa fa-list-ol"></i>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn post-edit__toolbar__add_image js-command js-upload-image"
+                                   title="{{i18n 'Add image'}}">
+                                    <i class="fa fa-picture-o"></i>
+                                    <input type="file" name="image" data-edit="insertImage"/>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn js-command js-add-link" data-edit="CreateLink"
+                                   title="{{i18n 'Hyperlink'}}">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-default js-command js-simple-command" data-edit="unlink"
+                                   title="{{i18n 'Remove' Hyperlink}}">
+                                    <i class="fa fa-cut"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post-edit__toolbar__submit-buttons">
+                            <div class="post-edit__status js-post-status"></div>
+                            <button class="btn btn-success js-post-publish">{{i18n 'Publish'}}</button>
+                            <button class="btn btn-danger js-post-delete {{#if isNew}}hide{{/if}}">{{i18n 'Delete'}}</button>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="post-edit__content">
+            <div class="post-edit__title">
+                {{#if readOnly}}
+                    <h1>{{post.title}}</h1>
+                {{else}}
+                    <input id="post-title" class="js-post-title" type="text" name="post-title"
+                           placeholder="{{i18n 'Title'}}" value="{{post.title}}"/>
+                {{/if}}
+            </div>
+            {{#if readOnly}}
+                <div id="post-body" class="post-edit__body">
+                    {{{post.body}}}
+                </div>
+            {{else}}
+                <div id="post-body" class="post-edit__body js-post-body" contenteditable="true">
+                    {{{post.body}}}
+                </div>
+            {{/if}}
+        </div>
+        {{#if editorDisabled}}
+            <div class="disable-cover">
+                <div class="disable-cover__bg"></div>
+                <div class="disable-cover__ban">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

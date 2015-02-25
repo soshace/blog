@@ -1,0 +1,18 @@
+<div class="posts__preview clearfix js-post-preview"
+     data-owner-id="{{ownerId}}"
+     data-status="{{status}}"
+     data-_id="{{_id}}"
+     data-locale="{{locale}}"
+        >
+    <div class="js-meta-data"></div>
+    <h2>
+        <a class="js-router-link js-title"
+           href="/{{locale}}/posts/{{_id}}">{{title}}</a>
+    </h2>
+    <div class="posts__preview__description js-description clearfix">{{{description}}}</div>
+
+    <div class="posts__preview__footer">
+        <a class="btn btn-primary js-router-link"
+           href="/{{locale}}/posts/{{_id}}">{{i18n 'Read more...'}}</a>
+    </div>
+</div>

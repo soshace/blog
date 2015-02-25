@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+</head>
+<body>
+<p>
+    {{i18n 'Hello'}}, {{userName}}.
+</p>
+
+<p>
+    {{{i18n "To confirm the <a href='http://{{host}}/{{locale}}'>Soshace</a> blog account you need to click on this link:" host locale}}}
+
+    <a href="{{emailConfirmLink}}">{{emailConfirmLink}}</a>
+</p>
+
+<p>
+    {{i18n 'If you are not registered on our site, just ignore this letter.'}}
+</p>
+
+<p>
+    {{{i18n "With best wishes, <a href='http://{{host}}/{{locale}}'>Soshace</a> blog team." host locale}}}
+</p>
+</body>
+<html>

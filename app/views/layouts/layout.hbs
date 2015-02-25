@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <link href="{{paths.static}}favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--Откомпилированные compass файлы, версия берется из package.json-->
+    <link href="{{paths.styles}}styles.css?v={{version}}" rel="stylesheet">
+</head>
+<body>
+<div class="js-header header">
+    {{> header}}
+</div>
+<div class="content">
+    <!--Place just for system messages systemMessagesView-->
+    <div class="content-center system-messages js-system-messages"></div>
+    <div class="js-content">
+        <div class="js-content-first-load">
+            {{{body}}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{{#if isProduction}}
+    <!-- Yandex.Metrika counter-->
+    <noscript>
+        <div>
+            <img src="//mc.yandex.ru/watch/23765065" class="ya-metrika__img" alt="">
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter-->
+    <!--Минифицированные скрипты, версия берется из package.json-->
+    <script src="{{paths.scripts}}scripts.min.js?v={{version}}"></script>
+    <script>
+        require(['app']);
+    </script>
+{{else}}
+    <script data-main="{{paths.static}}require.conf" src="{{paths.scripts}}vendors/require.js"></script>
+{{/if}}

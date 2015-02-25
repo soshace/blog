@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="{{paths.static}}favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!--Откомпилированные compass файлы, версия берется из package.json-->
+    <link href="{{paths.styles}}styles.css?v={{version}}" rel="stylesheet">
+    <link href="{{paths.styles}}admin.css?v={{version}}" rel="stylesheet">
+</head>
+<body style="background:#ccc">
+<div class="js-header header">
+    {{> header}}
+</div>
+<div class="js-content content">
+        {{{body}}}
+</div>
+</body>
+</html>
+<script data-main="{{paths.static}}require.admin.conf" src="{{paths.scripts}}vendors/require.js"></script>

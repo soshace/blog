@@ -1,0 +1,41 @@
+.nav-tabs {
+  margin: 0;
+  font-size: 16px;
+  line-height: 36px;
+  padding: 7px 0 7px 10px;
+  background-color: @btn-primary-bg;
+  color: #fff;
+  height: 50px;
+  .glyphicon {
+    vertical-align: top;
+    line-height: 32px;
+  }
+  li {
+    padding-right: 10px;
+    text-align: center;
+    list-style: none;
+    float: left;
+    a {
+      &:hover, &:focus {
+        background-color: darken(@btn-primary-bg, 8%);
+      }
+      &:active {
+        background-color: #3165a0;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+        .box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.5));
+      }
+    }
+  }
+  .active {
+    background-color: #3165a0;
+    cursor: default;
+    display: block;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    .box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.3));
+  }
+  li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+}

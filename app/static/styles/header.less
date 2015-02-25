@@ -1,0 +1,108 @@
+.header {
+  width: 100%;
+  z-index: 2;
+  @media (min-width: @screen-xs-max) {
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    .box-shadow(0 1px 1px 0 rgba(0, 0, 0, 0.2));
+  }
+  @media (max-width: @screen-xs-max) {
+    font-size: 30px;
+  }
+  &-content {
+    padding: 0 10px;
+    @media (min-width: @screen-xs-max) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: @screen-xs-max) {
+      padding: 7px 10px;
+    }
+  }
+  &__logo {
+    display: block;
+    padding-top: 7px;
+    float: left;
+    a {
+      display: block;
+    }
+    img {
+      width: 170px;
+    }
+    &-small {
+      padding-top: 0;
+      .box-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+      display: none;
+      img {
+        width: 46px;
+      }
+    }
+  }
+  &__tabs {
+    float: right;
+  }
+  &__tab {
+    text-align: center;
+    @media (min-width: @screen-xs-max) {
+      height: 60px;
+      line-height: 60px;
+      border-right: #333 1px solid;
+      border-left: #333 1px solid;
+    }
+    @media (max-width: @screen-xs-max) {
+      height: 46px;
+      line-height: 46px;
+      border-right: @bg-color-grey-light 1px solid;
+      border-left: @bg-color-grey-light 1px solid;
+    }
+    float: left;
+    padding: 0 15px;
+    &-link {
+      @media (min-width: @screen-xs-max) {
+        color: #fff;
+      }
+      @media (max-width: @screen-xs-max) {
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        color: #a9a9a9;
+      }
+      text-decoration: none;
+    }
+    &-link {
+      &:hover, &:focus {
+        @media (min-width: @screen-xs-max) {
+          color: #fff;
+          background: #232323;
+        }
+        @media (max-width: @screen-xs-max) {
+          background-color: darken(@bg-color-grey-light, 8%);
+          color: #a9a9a9;
+        }
+        text-decoration: none;
+      }
+    }
+    &-active, &:active {
+      @media (min-width: @screen-xs-max) {
+        background: #232323;
+        .box-shadow(inset 0 0 5px rgba(0, 0, 0, 1));
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+      }
+      @media (max-width: @screen-xs-max) {
+        color: #fff;
+        .bg-color-grey;
+        .box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.3));
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .glyphicon {
+      vertical-align: top;
+      @media (min-width: @screen-xs-max) {
+        line-height: 55px;
+        margin-right: 3px;
+      }
+      @media (max-width: @screen-xs-max) {
+        line-height: 42px;
+      }
+    }
+  }
+}

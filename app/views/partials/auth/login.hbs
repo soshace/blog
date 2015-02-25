@@ -1,0 +1,16 @@
+<form role="form" class="js-login-form" novalidate="novalidate">
+    <div class="form-group">
+        <label for="email">{{i18n 'Email address'}}</label>
+        <input type="text" class="form-control js-validate-input js-model-field"
+               name="email"
+               id="email"/>
+    </div>
+    <div class="form-group">
+        <label for="password">{{i18n 'Password'}}</label>
+        <input type="password" class="form-control js-validate-input js-model-field"
+               name="password"
+               id="password"/>
+    </div>
+    <button type="submit" class="auth-form__login-btn btn btn-primary">{{i18n 'Sign in'}}</button>
+    <a class="js-router-link auth-form__remind-password-link" href="/{{locale}}/remind_password">{{i18n 'Forgot your password?'}}</a>
+</form>

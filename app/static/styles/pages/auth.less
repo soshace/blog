@@ -1,0 +1,59 @@
+.auth {
+  @media (min-width: @screen-xs-max) {
+    width: 650px;
+    margin: 10px auto 0 auto;
+  }
+  @media (max-width: @screen-xs-max) {
+    border-bottom: 1px solid @border-color-grey;
+  }
+  &-form {
+    .box-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    background-color: #fff;
+    .nav-tabs {
+      &__login {
+        width: 30%;
+      }
+      &__registration {
+        width: 70%;
+      }
+    }
+    &__content {
+      padding: 10px;
+    }
+    &__login-btn {
+      display: block;
+      font-size: 16px;
+      width: 100%;
+    }
+    &__registration-btn {
+      display: block;
+      font-size: 16px;
+      width: 100%;
+    }
+    &__remind-password-link {
+      display: block;
+      padding-top: 10px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+  &__messages {
+    .alert {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.password-remind {
+  @media (min-width: @screen-xs-max) {
+    width: 650px;
+    margin: 10px auto 0 auto;
+  }
+
+  form {
+    .box-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    background-color: #fff;
+    padding: 10px;
+  }
+}
+

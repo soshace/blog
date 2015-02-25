@@ -1,0 +1,47 @@
+.alert {
+  @media (min-width: @screen-xs-max) {
+    margin-top: 10px;
+  }
+  &.shadow {
+    @media (min-width: @screen-xs-max) {
+      .box-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    }
+  }
+  text-align: center;
+  a {
+    text-decoration: underline;
+  }
+  &-danger {
+    .bg-danger;
+    color: @state-danger-text;
+  }
+  &-warning {
+    background-color: #FFEDBB;
+    color: #9a6202;
+    .glyphicon-warning-sign {
+      font-size: 21px;
+      vertical-align: top;
+      line-height: 16px;
+    }
+    a {
+      color: #9a6202;
+    }
+  }
+  &-success {
+    .bg-color-green;
+    .font-color-green;
+    a {
+      .font-color-green;
+    }
+  }
+  &-info {
+    .bg-color-blue-light;
+    .font-color-blue-light;
+    a {
+      .font-color-blue-light;
+    }
+  }
+  &-status {
+    margin: 0 0 15px 0;
+  }
+}

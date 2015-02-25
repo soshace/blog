@@ -1,0 +1,41 @@
+<ul class="nav-tabs clearfix">
+    <li class="nav-tabs__profile-info">
+        {{#if isUserMainTab}}
+            <span class="active">
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Author information'}}</span>
+            </span>
+        {{else}}
+            <a class="js-router-link" href="/{{locale}}/users/{{user.userName}}">
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Author information'}}</span>
+            </a>
+        {{/if}}
+    </li>
+    <li class="nav-tabs__edit-profile">
+        {{#if isUserEditTab}}
+            <span class="active">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Edit profile'}}</span>
+            </span>
+        {{else}}
+            <a class="js-router-link" href="/{{locale}}/users/{{user.userName}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Edit profile'}}</span>
+            </a>
+        {{/if}}
+    </li>
+    <li class="nav-tabs__profile-settings">
+        {{#if isUserSettingsTab}}
+            <span class="active">
+                <span class="glyphicon glyphicon-cog"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Settings'}}</span>
+            </span>
+        {{else}}
+            <a class="js-router-link" href="/{{locale}}/users/{{user.userName}}/settings">
+                <span class="glyphicon glyphicon-cog"></span>
+                <span class="hidden-xs hidden-sm">{{i18n 'Settings'}}</span>
+            </a>
+        {{/if}}
+    </li>
+</ul>

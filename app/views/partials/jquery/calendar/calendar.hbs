@@ -1,0 +1,23 @@
+<div class="form-control-calendar clearfix">
+    <div class="form-control-date">
+        <select class="form-control js-calendar-date" id="{{dateField}}" name="{{dateField}}">
+            {{#each datesList}}
+                <option {{#if selected}}selected="selected" {{/if}}value="{{value}}">{{title}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-control-month">
+        <select class="form-control js-calendar-month" id="{{monthField}}" name="{{monthField}}">
+            {{#each monthsList}}
+                <option {{#if selected}}selected="selected" {{/if}}value="{{value}}">{{title}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-control-year js-calendar-year">
+        <select class="form-control" id="{{fullYearField}}" name="{{fullYearField}}">
+            {{#each fullYearsList}}
+                <option {{#if selected}}selected="selected" {{/if}}value="{{value}}">{{title}}</option>
+            {{/each}}
+        </select>
+    </div>
+</div>

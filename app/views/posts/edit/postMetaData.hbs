@@ -1,0 +1,11 @@
+<div class="posts-metadata clearfix">
+    {{#if isOwner}}
+        {{#if status}}
+            <span class="posts-metadata__status status-label label {{statusClass}}">{{i18n statusTitle}}</span>
+        {{/if}}
+        {{#if editorEnable}}
+            <a class="posts-metadata__edit js-router-link hidden-xs"
+               href="/{{locale}}/posts/{{_id}}/edit"><span class="glyphicon glyphicon-edit"></span> {{i18n 'Edit'}}</a>
+        {{/if}}
+    {{/if}}
+</div>

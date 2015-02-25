@@ -1,0 +1,129 @@
+@import 'vendors/bootstrap';
+@import 'vendors/font-awesome';
+@import 'vendors/prettify';
+@import 'colors';
+@import 'controls';
+@import 'alerts';
+@import 'pages/posts/posts';
+@import 'pages/posts/postEdit';
+@import 'pages/auth';
+@import 'pages/user';
+@import 'header';
+@import 'tabs';
+
+img.center {
+  margin: 0 auto;
+}
+
+@media (max-width: @screen-xs-max) {
+  h2 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+code {
+  white-space: normal;
+}
+
+label {
+  font-weight: normal;
+  .font-color-grey;
+  margin-left: 2px;
+  font-style: italic;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  .bg-color-grey-light;
+  @media (min-width: @screen-xs-max) {
+    background-image: url('/static/images/backgrounds/bg-symbols.png');
+  }
+}
+
+.intro {
+  margin-top: 10px;
+  background: url('/static/images/intro.jpg');
+  background-repeat: no-repeat;
+  .background-size(cover);
+  padding: 0 10px 7px 10px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  .box-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+  h2 {
+    margin: 8px 0 3px 0;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  p {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+}
+
+.error {
+  background-color: #f2dede;
+}
+
+.ya-metrika {
+  &__img {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+.content {
+  @media (min-width: @screen-xs-max) {
+    padding: 0 10px 10px 10px;
+  }
+  &-center {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.disable-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &__bg {
+    background-color: #fff;
+    .opacity(0.4);
+    height: 100%;
+  }
+  &__ban {
+    @media (min-width: @screen-xs-max) {
+      top: 50%;
+      margin-top: -50px;
+    }
+    @media (max-width: @screen-xs-max) {
+      top: 50px;
+    }
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 100px;
+    color: #FF5754;
+  }
+  &__comment {
+    position: absolute;
+    top: 30px;
+    background-color: #fff;
+    width: 30%;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+  }
+}

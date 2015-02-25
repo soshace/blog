@@ -1,0 +1,70 @@
+.btn {
+  border-radius: 0;
+  .box-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  &.btn-default {
+    .box-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+  }
+  &:active {
+    .box-shadow(none);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.form-group-status {
+  padding: 5px 10px 1px 10px;
+  font-size: 13px;
+  font-style: italic;
+  border-bottom: 1px solid #4897DB;
+  color: #3276b1;
+}
+
+.form-group {
+  .form-control-feedback {
+    .glyphicon;
+    position: absolute;
+    top: 35px;
+  }
+}
+
+.form-group.has-success {
+  .form-control-feedback {
+    .glyphicon-ok;
+  }
+  .form-group-status {
+    color: @state-success-text;
+    border-bottom-color: @state-success-text;
+  }
+}
+
+.form-group.has-error {
+  .form-control-feedback {
+    .glyphicon-remove;
+  }
+  .form-group-status {
+    color: @state-danger-text;
+    border-bottom-color: @state-danger-text;
+  }
+}
+
+.form-control-calendar {
+  .form-control-date {
+    float: left;
+    width: 30%;
+    padding-right: 10px;
+  }
+  .form-control-month {
+    float: left;
+    width: 40%;
+    padding-right: 10px;
+  }
+  .form-control-year {
+    float: left;
+    width: 30%;
+  }
+}

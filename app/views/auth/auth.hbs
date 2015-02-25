@@ -1,0 +1,31 @@
+<div class="auth">
+    <div class="js-auth-messages auth__messages hide"></div>
+    <div class="auth-form">
+        <ul class="nav-tabs clearfix">
+            <li class="nav-tabs__login">
+                {{#if isLoginTab}}
+                    <span class="active">{{i18n 'Login'}}</span>
+                {{else}}
+                    <a href="/{{locale}}/login"
+                       class="js-router-link">{{i18n 'Login'}}</a>
+                {{/if}}
+            </li>
+            <li class="nav-tabs__registration">
+                {{#if isRegistrationTab}}
+                    <span class="active">{{i18n 'Registration'}}</span>
+                {{else}}
+                    <a class="js-router-link"
+                       href="/{{locale}}/registration">{{i18n 'Registration'}}</a>
+                {{/if}}
+            </li>
+        </ul>
+        <div class="auth-form__content">
+            {{#if isLoginTab}}
+                {{> auth/login}}
+            {{/if}}
+            {{#if isRegistrationTab}}
+                {{> auth/registration}}
+            {{/if}}
+        </div>
+    </div>
+</div>
